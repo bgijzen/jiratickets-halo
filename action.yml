@@ -1,0 +1,21 @@
+name: Jira Find issue key
+description: Find an issue inside event and summarize it
+branding:
+  icon: 'book-open'
+  color: 'blue'
+inputs:
+  string:
+    description: Provide a string to extract issue key from
+    required: false
+  from:
+    description: Find from predefined place (should be either 'branch', or 'commits')
+    required: false
+    default: commits
+outputs:
+  issue:
+    description: Key of the found issue
+  summary:
+    description: Summary of the found issue
+runs:
+  using: 'node16'
+  main: './dist/index.js'
